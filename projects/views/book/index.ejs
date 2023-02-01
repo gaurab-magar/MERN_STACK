@@ -1,0 +1,34 @@
+<table class="table table-hover caption-top mt-3">
+    <caption class="mx-2">
+      <h1 class="mx-2 float-start">List of Book</h1>
+      <a class="btn btn-success float-end" href="/book/create">Create</a>
+    </caption>
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category Id</th>
+            <th scope="col">Author Id</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 
+            let i = 1;
+            for(const book of books){ 
+          %>
+            <tr>
+  
+            <th scope="row"><%= i %></th>
+            <td><%= book.title %></td>
+            <td><%= book.category_id?.name %></td>
+            <td><%= book.author_id[0].name %></td>
+            <td><a href="<%= '/book/delete/'+book._id %>" class="btn btn-danger">Delete</a></td>
+          </tr>
+          <% 
+              i++; 
+            } 
+          %>
+  
+      </tbody>    
+  </table>

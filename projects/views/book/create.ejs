@@ -1,0 +1,40 @@
+<form class="m-3" method="POST" action="/book">
+    <div class="mb-3">
+      <label for="name" class="form-label">Title: </label>
+      <input type="text" name="title" class="form-control" id="name">
+    </div>
+    <div>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Author: </label>
+        <select name="author_id" class="form-control">
+          <% for(author of authors){ %>
+          <option value="<%= author._id %>"><%= author.name %></option>
+          <% } %>
+        </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Category: </label>
+      <select name="category_id" class="form-control">
+        <% for(category of categories){ %>
+        <option value="<%= category._id %>"><%= category.name %></option>
+        <% } %>
+      </select>
+  </div>
+
+
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
